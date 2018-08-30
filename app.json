@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/weather/weather",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffa5bc",
+    "navigationBarTitleText": "爱喝酒的胖娃娃",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": true
+  }
+}

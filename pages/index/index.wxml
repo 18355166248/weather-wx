@@ -1,0 +1,40 @@
+<view class='container'>
+  <image id='bg-index' src='../../img/bg-1.jpg'></image>
+  <!-- 搜索 -->
+  <view id='main'>
+    <view class='search'>
+      <view>
+        <icon type='search' class='search-icon' color='#fff' size='14'/>
+        <input placeholder='请输入城市名' placeholder-style="color:#fff;" confirm-type='search' maxlength="20" value='{{searchValue}}' bindconfirm='searchCity'></input>
+      </view>
+    </view>
+    <!-- 当日天气展示 -->
+    <view class='curday-weather'>
+      <text class='city-name'>{{weatherData.currentCity}}</text>
+      <text class='update-time'>{{updateTime}}更新</text>
+      <view class='prompt'>{{message}}</view>
+      <view class='temperature'>{{weatherData.curTem}}</view>
+      <view class='weatherDesc'>{{weatherData.weatherDesc}}</view>
+      <view class='weatherPm'><text>{{weatherData.curPmDesc}}</text></view>
+    </view>
+    <!-- 近4天天气 -->
+    <view class='weather-recent'>
+      <view class='recent-day' wx:for="{{originalData.weather_data}}" wx:key="index">
+        <view>{{ index === 0 ? '今天' : item.date }}</view>
+        <view>{{ item.temperature }}</view>
+        <view>{{ item.weather }}</view>
+        <view>{{ item.wind }}</view>
+      </view>
+    </view>
+    <!-- 建议信息 -->
+    <view class='suggesst-info'>
+      <view class='suggesst-every' wx:for="{{originalData.index}}" wx:key="index">
+        <image src='{{item.img}}'></image>
+        <view class='suggesst-txt'>
+          <view class='sugg-one'>{{item.tipt}} {{item.zs}}</view><br/>
+          <text class='sugg-two'>{{item.des}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
